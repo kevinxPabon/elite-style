@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Productos - Élite Style</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/animations.css">
+    <link rel="stylesheet" href="../css/responsive.css">
+</head>
+<body>
+    <!-- NAVBAR -->
+    <nav class="navbar">
+        <div class="container">
+            <div class="navbar-brand">
+                <h1 class="logo"><i class="fas fa-crown"></i> Élite Style</h1>
+            </div>
+            <ul class="navbar-menu">
+                <li><a href="../index.html">Inicio</a></li>
+                <li><a href="#">Tienda</a></li>
+                <li><a href="#contacto">Contacto</a></li>
+                <li id="nav-auth"></li>
+            </ul>
+            <div class="navbar-icons">
+                <a href="cart.html" class="icon-link" title="Carrito">
+                    <i class="fas fa-shopping-cart"></i>
+                    <span class="cart-count">0</span>
+                </a>
+                <button class="menu-toggle" id="menu-toggle">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- PÁGINA DE PRODUCTOS -->
+    <div class="products-page">
+        <div class="container">
+            <div class="page-header">
+                <h1>Nuestros Productos</h1>
+                <p>Explora nuestra exclusiva colección de ropa y accesorios premium</p>
+            </div>
+
+            <div class="products-section">
+                <!-- FILTROS -->
+                <aside class="filters-sidebar">
+                    <h3>Filtros</h3>
+                    
+                    <div class="filter-group">
+                        <h4>Categoría</h4>
+                        <div id="categories-filter"></div>
+                    </div>
+
+                    <div class="filter-group">
+                        <h4>Precio</h4>
+                        <div class="price-range">
+                            <input type="range" id="price-min" min="0" max="500000" value="0">
+                            <input type="range" id="price-max" min="0" max="500000" value="500000">
+                        </div>
+                        <div class="price-display">
+                            <span id="price-min-display">$0</span> - <span id="price-max-display">$500.000</span>
+                        </div>
+                    </div>
+
+                    <div class="filter-group">
+                        <h4>Ordenar por</h4>
+                        <select id="sort-by">
+                            <option value="recent">Más reciente</option>
+                            <option value="price-asc">Precio: Menor a Mayor</option>
+                            <option value="price-desc">Precio: Mayor a Menor</option>
+                            <option value="popular">Más popular</option>
+                        </select>
+                    </div>
+
+                    <button class="btn btn-primary" id="clear-filters">Limpiar Filtros</button>
+                </aside>
+
+                <!-- PRODUCTOS -->
+                <main class="products-container">
+                    <div class="products-grid" id="products-list"></div>
+                    
+                    <!-- PAGINACIÓN -->
+                    <div class="pagination" id="pagination"></div>
+                </main>
+            </div>
+        </div>
+    </div>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h4>Élite Style</h4>
+                    <p>Tu tienda online premium de ropa y accesorios</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Enlaces Rápidos</h4>
+                    <ul>
+                        <li><a href="#">Acerca de</a></li>
+                        <li><a href="#">Términos</a></li>
+                        <li><a href="#">Privacidad</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Élite Style. Todos los derechos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Modal de Notificación -->
+    <div id="notification-modal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <div id="notification-message"></div>
+        </div>
+    </div>
+
+    <script src="../js/api.js"></script>
+    <script src="../js/products.js"></script>
+</body>
+</html>

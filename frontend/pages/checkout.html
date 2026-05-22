@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Checkout - Élite Style</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/animations.css">
+    <link rel="stylesheet" href="../css/responsive.css">
+</head>
+<body>
+    <!-- NAVBAR -->
+    <nav class="navbar">
+        <div class="container">
+            <div class="navbar-brand">
+                <h1 class="logo"><i class="fas fa-crown"></i> Élite Style</h1>
+            </div>
+        </div>
+    </nav>
+
+    <!-- PÁGINA DE CHECKOUT -->
+    <div class="checkout-page section">
+        <div class="container">
+            <h1 class="section-title">Finalizar Compra</h1>
+
+            <div class="checkout-content">
+                <!-- FORMULARIO DE ENVÍO -->
+                <div class="checkout-form">
+                    <h2>Información de Entrega</h2>
+                    <form id="checkout-form">
+                        <div class="form-group">
+                            <label for="nombre">Nombre Completo</label>
+                            <input type="text" id="nombre" name="nombre" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="email">Email</label>
+                            <input type="email" id="email" name="email" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="telefono">Teléfono</label>
+                            <input type="tel" id="telefono" name="telefono" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="direccion">Dirección</label>
+                            <input type="text" id="direccion" name="direccion" required>
+                        </div>
+
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="ciudad">Ciudad</label>
+                                <input type="text" id="ciudad" name="ciudad" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="codigo-postal">Código Postal</label>
+                                <input type="text" id="codigo-postal" name="codigo-postal">
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="entrega">Tipo de Entrega</label>
+                            <select id="entrega" name="entrega" required>
+                                <option value="domicilio">Entrega a Domicilio</option>
+                                <option value="retiro_tienda">Retiro en Tienda</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="notas">Notas Especiales (Opcional)</label>
+                            <textarea id="notas" name="notas" rows="4" placeholder="Instrucciones especiales para la entrega"></textarea>
+                        </div>
+
+                        <button type="submit" class="btn btn-primary btn-lg" style="width: 100%;">
+                            <i class="fas fa-check"></i> Completar Pedido
+                        </button>
+                    </form>
+                </div>
+
+                <!-- RESUMEN DE COMPRA -->
+                <aside class="checkout-summary">
+                    <h2>Resumen del Pedido</h2>
+                    <div id="order-items"></div>
+                    
+                    <div class="summary-item">
+                        <span>Subtotal:</span>
+                        <span id="subtotal">$0</span>
+                    </div>
+                    <div class="summary-item">
+                        <span>Envío:</span>
+                        <span id="shipping">$0</span>
+                    </div>
+                    <div class="summary-item">
+                        <span>Impuestos:</span>
+                        <span id="taxes">$0</span>
+                    </div>
+                    <div class="summary-item total">
+                        <span>Total a Pagar:</span>
+                        <span id="total">$0</span>
+                    </div>
+                </aside>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal -->
+    <div id="notification-modal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <div id="notification-message"></div>
+        </div>
+    </div>
+
+    <script src="../js/api.js"></script>
+    <script src="../js/checkout.js"></script>
+</body>
+</html>
