@@ -1,0 +1,50 @@
+# ============================================
+# CONFIGURACIÓN APACHE - ÉLITE STYLE
+# ============================================
+
+# Habilitar mod_rewrite
+<IfModule mod_rewrite.c>
+    RewriteEngine On
+    RewriteBase /elite-style/
+    
+    # Redirigir www a no-www
+    RewriteCond %{HTTP_HOST} ^www\. [NC]
+    RewriteRule ^(.*)$ http://%{HTTP_HOST:www.}$1 [R=301,L]
+    
+    # Permitir archivos estáticos
+    RewriteCond %{REQUEST_FILENAME} -f [OR]
+    RewriteCond %{REQUEST_FILENAME} -d
+    RewriteRule ^ - [L]
+</IfModule>
+
+# Seguridad
+<FilesMatch "\.php$">
+    <IfModule mod_authz_core.c>
+        Deny from all
+    </IfModule>
+</FilesMatch>
+
+<FilesMatch "^index\.php$">
+    <IfModule mod_authz_core.c>
+        Allow from all
+    </IfModule>
+</FilesMatch>
+
+# Proteger archivos de configuración
+<FilesMatch "(config|database)\.php$">
+    <IfModule mod_authz_core.c>
+        Deny from all
+    </IfModule>
+</FilesMatch>
+
+# Comprimir contenido
+<IfModule mod_deflate.c>
+    AddOutputFilterByType DEFLATE text/plain text/html text/xml text/css text/javascript application/javascript application/json
+</IfModule>
+
+# Cache
+<IfModule mod_headers.c>
+    <FilesMatch "\.(jpg|jpeg|png|gif|css|js|woff|woff2|ttf|svg)$">
+        Header set Cache-Control "max-age=31536000, public"
+    </FilesMatch>
+</IfModule>

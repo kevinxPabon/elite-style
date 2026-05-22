@@ -1,0 +1,40 @@
+# Archivos del sistema
+.DS_Store
+.env
+*.log
+thumbs.db
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.project
+.buildpath
+
+# Dependencias
+node_modules/
+composer.lock
+vendor/
+
+# Archivos locales
+local_config.php
+.env.local
+
+# Carpetas de upload (mantener estructura)
+backend/uploads/productos/*
+backend/uploads/perfiles/*
+backend/uploads/categorias/*
+!backend/uploads/.gitkeep
+!backend/uploads/productos/.gitkeep
+!backend/uploads/perfiles/.gitkeep
+!backend/uploads/categorias/.gitkeep
+
+# Logs
+logs/
+*.log
+
+# Caché
+.cache/
+*.tmp

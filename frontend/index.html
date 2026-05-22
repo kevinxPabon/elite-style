@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Élite Style - Tienda online premium de ropa y accesorios">
+    <title>Élite Style - Tienda Premium</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/animations.css">
+    <link rel="stylesheet" href="css/responsive.css">
+</head>
+<body>
+    <!-- NAVBAR -->
+    <nav class="navbar">
+        <div class="container">
+            <div class="navbar-brand">
+                <h1 class="logo"><i class="fas fa-crown"></i> Élite Style</h1>
+            </div>
+            <ul class="navbar-menu">
+                <li><a href="#inicio">Inicio</a></li>
+                <li><a href="pages/products.html">Tienda</a></li>
+                <li><a href="#contacto">Contacto</a></li>
+                <li id="nav-auth"></li>
+            </ul>
+            <div class="navbar-icons">
+                <a href="pages/cart.html" class="icon-link" title="Carrito">
+                    <i class="fas fa-shopping-cart"></i>
+                    <span class="cart-count">0</span>
+                </a>
+                <button class="menu-toggle" id="menu-toggle">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- HERO SECTION -->
+    <section class="hero" id="inicio">
+        <div class="hero-content">
+            <h2 class="hero-title">Bienvenido a Élite Style</h2>
+            <p class="hero-subtitle">Descubre nuestra colección exclusiva de ropa y accesorios premium</p>
+            <a href="pages/products.html" class="btn btn-primary btn-lg">Explorar Tienda</a>
+        </div>
+        <div class="hero-overlay"></div>
+    </section>
+
+    <!-- CATEGORÍAS DESTACADAS -->
+    <section class="featured-categories section">
+        <div class="container">
+            <h2 class="section-title">Categorías Destacadas</h2>
+            <div class="categories-grid" id="categories-container"></div>
+        </div>
+    </section>
+
+    <!-- PRODUCTOS DESTACADOS -->
+    <section class="featured-products section">
+        <div class="container">
+            <h2 class="section-title">Productos Destacados</h2>
+            <div class="products-grid" id="featured-products"></div>
+        </div>
+    </section>
+
+    <!-- SECCIÓN DE CARACTERÍSTICAS -->
+    <section class="features section">
+        <div class="container">
+            <div class="features-grid">
+                <div class="feature-card">
+                    <i class="fas fa-truck"></i>
+                    <h3>Envío Rápido</h3>
+                    <p>Entrega en 24-48 horas en toda Colombia</p>
+                </div>
+                <div class="feature-card">
+                    <i class="fas fa-lock"></i>
+                    <h3>Compra Segura</h3>
+                    <p>Pago seguro y protección de datos garantizada</p>
+                </div>
+                <div class="feature-card">
+                    <i class="fas fa-undo"></i>
+                    <h3>Devoluciones</h3>
+                    <p>30 días de garantía y devoluciones gratis</p>
+                </div>
+                <div class="feature-card">
+                    <i class="fas fa-headset"></i>
+                    <h3>Soporte 24/7</h3>
+                    <p>Atención al cliente disponible siempre</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FORMULARIO DE CONTACTO -->
+    <section class="contact section" id="contacto">
+        <div class="container">
+            <h2 class="section-title">Contáctanos</h2>
+            <div class="contact-content">
+                <form id="contact-form" class="contact-form">
+                    <div class="form-group">
+                        <input type="text" name="nombre" placeholder="Tu nombre" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="email" name="email" placeholder="Tu email" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="text" name="asunto" placeholder="Asunto" required>
+                    </div>
+                    <div class="form-group">
+                        <textarea name="mensaje" placeholder="Tu mensaje" rows="5" required></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Enviar Mensaje</button>
+                </form>
+                <div class="contact-info">
+                    <div class="info-item">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <div>
+                            <h4>Ubicación</h4>
+                            <p>Bogotá, Colombia</p>
+                        </div>
+                    </div>
+                    <div class="info-item">
+                        <i class="fas fa-phone"></i>
+                        <div>
+                            <h4>Teléfono</h4>
+                            <p>+57 1 234 5678</p>
+                        </div>
+                    </div>
+                    <div class="info-item">
+                        <i class="fas fa-envelope"></i>
+                        <div>
+                            <h4>Email</h4>
+                            <p>info@elitestyle.com</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h4>Élite Style</h4>
+                    <p>Tu tienda online premium de ropa y accesorios</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Enlaces Rápidos</h4>
+                    <ul>
+                        <li><a href="#">Acerca de</a></li>
+                        <li><a href="#">Términos</a></li>
+                        <li><a href="#">Privacidad</a></li>
+                        <li><a href="#">FAQ</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Síguenos</h4>
+                    <div class="social-links">
+                        <a href="#" class="social-link"><i class="fab fa-facebook"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Élite Style. Todos los derechos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Modal de Notificación -->
+    <div id="notification-modal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <div id="notification-message"></div>
+        </div>
+    </div>
+
+    <script src="js/api.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html>

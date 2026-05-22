@@ -1,0 +1,302 @@
+/* ============================================
+   DISEÑO RESPONSIVO - ÉLITE STYLE
+   ============================================ */
+
+/* Tablets - 768px y menos */
+@media (max-width: 768px) {
+    .navbar .container {
+        padding: 10px 15px;
+    }
+
+    .logo {
+        font-size: 20px;
+    }
+
+    .navbar-menu {
+        display: none;
+        position: absolute;
+        top: 60px;
+        left: 0;
+        width: 100%;
+        flex-direction: column;
+        background-color: var(--color-secondary);
+        gap: 0;
+        border-top: 1px solid var(--color-border);
+    }
+
+    .navbar-menu.active {
+        display: flex;
+    }
+
+    .navbar-menu li {
+        border-bottom: 1px solid var(--color-border);
+    }
+
+    .navbar-menu a {
+        display: block;
+        padding: 15px 20px;
+    }
+
+    .menu-toggle {
+        display: block;
+    }
+
+    .hero-title {
+        font-size: 32px;
+    }
+
+    .hero-subtitle {
+        font-size: 16px;
+    }
+
+    .section {
+        padding: 60px 20px;
+    }
+
+    .section-title {
+        font-size: 28px;
+        margin-bottom: 40px;
+    }
+
+    .categories-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 20px;
+    }
+
+    .products-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 20px;
+    }
+
+    .contact-content {
+        grid-template-columns: 1fr;
+        gap: 30px;
+    }
+
+    .features-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
+    .footer-content {
+        grid-template-columns: 1fr;
+        gap: 30px;
+    }
+}
+
+/* Móviles - 480px y menos */
+@media (max-width: 480px) {
+    .logo {
+        font-size: 18px;
+    }
+
+    .navbar-icons {
+        gap: 10px;
+    }
+
+    .hero {
+        padding: 80px 20px;
+        min-height: 400px;
+    }
+
+    .hero-title {
+        font-size: 24px;
+        margin-bottom: 10px;
+    }
+
+    .hero-subtitle {
+        font-size: 14px;
+        margin-bottom: 20px;
+    }
+
+    .btn-lg {
+        padding: 12px 24px;
+        font-size: 14px;
+    }
+
+    .section {
+        padding: 40px 15px;
+    }
+
+    .section-title {
+        font-size: 22px;
+        margin-bottom: 30px;
+    }
+
+    .categories-grid {
+        grid-template-columns: 1fr;
+        gap: 15px;
+    }
+
+    .products-grid {
+        grid-template-columns: 1fr;
+        gap: 15px;
+    }
+
+    .product-card {
+        margin-bottom: 0;
+    }
+
+    .contact-form,
+    .contact-info {
+        width: 100%;
+    }
+
+    .info-item {
+        gap: 15px;
+    }
+
+    .features-grid {
+        grid-template-columns: 1fr;
+        gap: 15px;
+    }
+
+    .feature-card {
+        padding: 20px 15px;
+    }
+
+    .feature-card i {
+        font-size: 32px;
+    }
+
+    .footer-section {
+        text-align: center;
+    }
+
+    .social-links {
+        justify-content: center;
+    }
+
+    .form-group input,
+    .form-group textarea,
+    .form-group select {
+        font-size: 16px; /* Prevenir zoom en iOS */
+    }
+
+    .modal-content {
+        margin: 50% auto;
+        width: 90%;
+        padding: 20px;
+    }
+
+    .cart-count {
+        width: 18px;
+        height: 18px;
+        font-size: 11px;
+    }
+}
+
+/* Pequeños móviles - 360px y menos */
+@media (max-width: 360px) {
+    .logo {
+        font-size: 16px;
+    }
+
+    .navbar-icons {
+        gap: 8px;
+    }
+
+    .icon-link {
+        font-size: 18px;
+    }
+
+    .hero-title {
+        font-size: 20px;
+    }
+
+    .hero-subtitle {
+        font-size: 12px;
+    }
+
+    .section-title {
+        font-size: 18px;
+        margin-bottom: 20px;
+    }
+
+    .product-card {
+        border-radius: 4px;
+    }
+
+    .btn {
+        padding: 10px 16px;
+        font-size: 12px;
+    }
+
+    .feature-card i {
+        font-size: 28px;
+    }
+}
+
+/* Orientación horizontal en tablets */
+@media (max-height: 600px) and (orientation: landscape) {
+    .hero {
+        padding: 60px 20px;
+        min-height: auto;
+    }
+
+    .section {
+        padding: 40px 20px;
+    }
+}
+
+/* Pantallas grandes - 1400px y más */
+@media (min-width: 1400px) {
+    .container {
+        max-width: 1350px;
+    }
+
+    .section {
+        padding: 100px 20px;
+    }
+
+    .hero {
+        padding: 150px 20px;
+    }
+
+    .hero-title {
+        font-size: 56px;
+    }
+}
+
+/* Modo de impresión */
+@media print {
+    .navbar,
+    .footer,
+    .navbar-icons,
+    .btn,
+    .contact-form {
+        display: none;
+    }
+
+    body {
+        background-color: white;
+        color: black;
+    }
+
+    .product-card {
+        border: 1px solid #ccc;
+        page-break-inside: avoid;
+    }
+}
+
+/* Preferencia de movimiento reducido */
+@media (prefers-reduced-motion: reduce) {
+    * {
+        animation: none !important;
+        transition: none !important;
+    }
+}
+
+/* Modo oscuro forzado */
+@media (prefers-color-scheme: dark) {
+    /* Los estilos ya están optimizados para modo oscuro */
+}
+
+/* Densidad de píxeles */
+@media (-webkit-min-device-pixel-ratio: 2),
+       (min-resolution: 192dpi) {
+    /* Optimización para pantallas de alta densidad */
+    .logo {
+        -webkit-font-smoothing: antialiased;
+    }
+}
