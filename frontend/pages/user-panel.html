@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mi Panel - Élite Style</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/user-panel.css">
+    <link rel="stylesheet" href="../css/responsive.css">
+</head>
+<body>
+    <!-- NAVBAR -->
+    <nav class="navbar">
+        <div class="container">
+            <div class="navbar-brand">
+                <h1 class="logo"><i class="fas fa-crown"></i> Élite Style</h1>
+            </div>
+            <ul class="navbar-menu">
+                <li><a href="../index.html">Inicio</a></li>
+                <li><a href="products.html">Tienda</a></li>
+            </ul>
+            <div class="navbar-icons">
+                <a href="cart.html" class="icon-link">
+                    <i class="fas fa-shopping-cart"></i>
+                    <span class="cart-count">0</span>
+                </a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- PANEL DE USUARIO -->
+    <div class="user-panel-container">
+        <aside class="user-sidebar">
+            <div class="user-header">
+                <img src="../img/user-avatar.jpg" alt="Avatar" class="user-avatar">
+                <h2 id="user-name">Usuario</h2>
+                <p id="user-email">usuario@email.com</p>
+            </div>
+
+            <nav class="user-menu">
+                <a href="#perfil" class="menu-item active" data-section="perfil">
+                    <i class="fas fa-user"></i> Mi Perfil
+                </a>
+                <a href="#pedidos" class="menu-item" data-section="pedidos">
+                    <i class="fas fa-shopping-bag"></i> Mis Pedidos
+                </a>
+                <a href="#reservas" class="menu-item" data-section="reservas">
+                    <i class="fas fa-calendar"></i> Mis Reservas
+                </a>
+                <a href="#" onclick="logout()" class="menu-item logout">
+                    <i class="fas fa-sign-out-alt"></i> Cerrar Sesión
+                </a>
+            </nav>
+        </aside>
+
+        <main class="user-main">
+            <!-- PERFIL -->
+            <section id="perfil-section" class="content-section active">
+                <h1>Mi Perfil</h1>
+                <div class="profile-form">
+                    <form id="profile-form">
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label>Nombre</label>
+                                <input type="text" id="nombre" name="nombre" required>
+                            </div>
+                            <div class="form-group">
+                                <label>Apellido</label>
+                                <input type="text" id="apellido" name="apellido" required>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label>Email</label>
+                            <input type="email" id="email" name="email" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label>Teléfono</label>
+                            <input type="tel" id="telefono" name="telefono">
+                        </div>
+
+                        <div class="form-group">
+                            <label>Dirección</label>
+                            <input type="text" id="direccion" name="direccion">
+                        </div>
+
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label>Ciudad</label>
+                                <input type="text" id="ciudad" name="ciudad">
+                            </div>
+                            <div class="form-group">
+                                <label>Código Postal</label>
+                                <input type="text" id="codigo_postal" name="codigo_postal">
+                            </div>
+                        </div>
+
+                        <button type="submit" class="btn btn-primary">Guardar Cambios</button>
+                    </form>
+                </div>
+            </section>
+
+            <!-- PEDIDOS -->
+            <section id="pedidos-section" class="content-section">
+                <h1>Mis Pedidos</h1>
+                <div id="pedidos-list" class="orders-list"></div>
+            </section>
+
+            <!-- RESERVAS -->
+            <section id="reservas-section" class="content-section">
+                <h1>Mis Reservas</h1>
+                <button class="btn btn-primary" id="new-reservation-btn"><i class="fas fa-plus"></i> Nueva Reserva</button>
+                <div id="reservas-list" class="reservations-list"></div>
+            </section>
+        </main>
+    </div>
+
+    <!-- Modal de Nueva Reserva -->
+    <div id="reservation-modal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>Nueva Reserva</h2>
+            <form id="reservation-form">
+                <div class="form-group">
+                    <label>Fecha</label>
+                    <input type="date" name="fecha" required>
+                </div>
+                <div class="form-group">
+                    <label>Hora</label>
+                    <input type="time" name="hora" required>
+                </div>
+                <div class="form-group">
+                    <label>Motivo</label>
+                    <input type="text" name="motivo" placeholder="Consulta, asesoría, etc." required>
+                </div>
+                <button type="submit" class="btn btn-primary">Crear Reserva</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Modal de Notificación -->
+    <div id="notification-modal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <div id="notification-message"></div>
+        </div>
+    </div>
+
+    <script src="../js/api.js"></script>
+    <script src="../js/user-panel.js"></script>
+</body>
+</html>

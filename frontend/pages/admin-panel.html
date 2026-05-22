@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Panel de Administrador - Élite Style</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/admin.css">
+    <link rel="stylesheet" href="../css/responsive.css">
+</head>
+<body>
+    <div class="admin-container">
+        <!-- SIDEBAR -->
+        <aside class="admin-sidebar">
+            <div class="sidebar-header">
+                <h2><i class="fas fa-crown"></i> Élite Style</h2>
+                <button class="toggle-sidebar" id="toggle-sidebar"><i class="fas fa-bars"></i></button>
+            </div>
+
+            <nav class="sidebar-menu">
+                <a href="#dashboard" class="menu-item active" data-section="dashboard">
+                    <i class="fas fa-chart-line"></i> <span>Dashboard</span>
+                </a>
+                <a href="#productos" class="menu-item" data-section="productos">
+                    <i class="fas fa-box"></i> <span>Productos</span>
+                </a>
+                <a href="#pedidos" class="menu-item" data-section="pedidos">
+                    <i class="fas fa-shopping-bag"></i> <span>Pedidos</span>
+                </a>
+                <a href="#reservas" class="menu-item" data-section="reservas">
+                    <i class="fas fa-calendar"></i> <span>Reservas</span>
+                </a>
+                <a href="#usuarios" class="menu-item" data-section="usuarios">
+                    <i class="fas fa-users"></i> <span>Usuarios</span>
+                </a>
+                <a href="#contactos" class="menu-item" data-section="contactos">
+                    <i class="fas fa-envelope"></i> <span>Contactos</span>
+                </a>
+                <a href="#" onclick="logout()" class="menu-item logout-btn">
+                    <i class="fas fa-sign-out-alt"></i> <span>Cerrar Sesión</span>
+                </a>
+            </nav>
+        </aside>
+
+        <!-- MAIN CONTENT -->
+        <main class="admin-main">
+            <!-- HEADER -->
+            <header class="admin-header">
+                <h1 id="section-title">Dashboard</h1>
+                <div class="admin-user">
+                    <img src="../img/user-avatar.jpg" alt="Avatar">
+                    <div class="user-info">
+                        <p id="user-name">Admin</p>
+                        <small>Administrador</small>
+                    </div>
+                </div>
+            </header>
+
+            <!-- CONTENT AREA -->
+            <div class="admin-content">
+                <!-- DASHBOARD -->
+                <section id="dashboard-section" class="content-section active">
+                    <div class="stats-grid">
+                        <div class="stat-card">
+                            <div class="stat-icon"><i class="fas fa-shopping-bag"></i></div>
+                            <div class="stat-info">
+                                <h3 id="total-orders">0</h3>
+                                <p>Pedidos Totales</p>
+                            </div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-icon"><i class="fas fa-users"></i></div>
+                            <div class="stat-info">
+                                <h3 id="total-users">0</h3>
+                                <p>Usuarios</p>
+                            </div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-icon"><i class="fas fa-box"></i></div>
+                            <div class="stat-info">
+                                <h3 id="total-products">0</h3>
+                                <p>Productos</p>
+                            </div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-icon"><i class="fas fa-dollar-sign"></i></div>
+                            <div class="stat-info">
+                                <h3 id="total-revenue">$0</h3>
+                                <p>Ingresos</p>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- PRODUCTOS -->
+                <section id="productos-section" class="content-section">
+                    <div class="section-header">
+                        <h2>Gestión de Productos</h2>
+                        <button class="btn btn-primary" id="add-product-btn"><i class="fas fa-plus"></i> Nuevo Producto</button>
+                    </div>
+                    <div id="productos-list" class="table-responsive">
+                        <table class="admin-table">
+                            <thead>
+                                <tr>
+                                    <th>ID</th>
+                                    <th>Nombre</th>
+                                    <th>Categoría</th>
+                                    <th>Precio</th>
+                                    <th>Stock</th>
+                                    <th>Estado</th>
+                                    <th>Acciones</th>
+                                </tr>
+                            </thead>
+                            <tbody id="productos-tbody"></tbody>
+                        </table>
+                    </div>
+                </section>
+
+                <!-- PEDIDOS -->
+                <section id="pedidos-section" class="content-section">
+                    <div class="section-header">
+                        <h2>Gestión de Pedidos</h2>
+                    </div>
+                    <div id="pedidos-list" class="table-responsive">
+                        <table class="admin-table">
+                            <thead>
+                                <tr>
+                                    <th>Número</th>
+                                    <th>Cliente</th>
+                                    <th>Total</th>
+                                    <th>Estado</th>
+                                    <th>Fecha</th>
+                                    <th>Acciones</th>
+                                </tr>
+                            </thead>
+                            <tbody id="pedidos-tbody"></tbody>
+                        </table>
+                    </div>
+                </section>
+
+                <!-- RESERVAS -->
+                <section id="reservas-section" class="content-section">
+                    <div class="section-header">
+                        <h2>Gestión de Reservas</h2>
+                    </div>
+                    <div id="reservas-list" class="table-responsive">
+                        <table class="admin-table">
+                            <thead>
+                                <tr>
+                                    <th>Número</th>
+                                    <th>Cliente</th>
+                                    <th>Fecha</th>
+                                    <th>Hora</th>
+                                    <th>Estado</th>
+                                    <th>Acciones</th>
+                                </tr>
+                            </thead>
+                            <tbody id="reservas-tbody"></tbody>
+                        </table>
+                    </div>
+                </section>
+
+                <!-- USUARIOS -->
+                <section id="usuarios-section" class="content-section">
+                    <div class="section-header">
+                        <h2>Gestión de Usuarios</h2>
+                    </div>
+                    <div id="usuarios-list" class="table-responsive">
+                        <table class="admin-table">
+                            <thead>
+                                <tr>
+                                    <th>ID</th>
+                                    <th>Nombre</th>
+                                    <th>Email</th>
+                                    <th>Rol</th>
+                                    <th>Estado</th>
+                                    <th>Acciones</th>
+                                </tr>
+                            </thead>
+                            <tbody id="usuarios-tbody"></tbody>
+                        </table>
+                    </div>
+                </section>
+
+                <!-- CONTACTOS -->
+                <section id="contactos-section" class="content-section">
+                    <div class="section-header">
+                        <h2>Mensajes de Contacto</h2>
+                    </div>
+                    <div id="contactos-list" class="table-responsive">
+                        <table class="admin-table">
+                            <thead>
+                                <tr>
+                                    <th>Nombre</th>
+                                    <th>Email</th>
+                                    <th>Asunto</th>
+                                    <th>Estado</th>
+                                    <th>Fecha</th>
+                                    <th>Acciones</th>
+                                </tr>
+                            </thead>
+                            <tbody id="contactos-tbody"></tbody>
+                        </table>
+                    </div>
+                </section>
+            </div>
+        </main>
+    </div>
+
+    <!-- Modal para productos -->
+    <div id="product-modal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>Nuevo Producto</h2>
+            <form id="product-form">
+                <div class="form-group">
+                    <label>Nombre</label>
+                    <input type="text" name="nombre" required>
+                </div>
+                <div class="form-group">
+                    <label>Descripción</label>
+                    <textarea name="descripcion" required></textarea>
+                </div>
+                <div class="form-group">
+                    <label>Categoría</label>
+                    <select name="categoria_id" required></select>
+                </div>
+                <div class="form-row">
+                    <div class="form-group">
+                        <label>Precio</label>
+                        <input type="number" name="precio" step="0.01" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Stock</label>
+                        <input type="number" name="stock" required>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label>Imagen</label>
+                    <input type="file" name="imagen" accept="image/*" required>
+                </div>
+                <button type="submit" class="btn btn-primary">Guardar Producto</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Modal de Notificación -->
+    <div id="notification-modal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <div id="notification-message"></div>
+        </div>
+    </div>
+
+    <script src="../js/api.js"></script>
+    <script src="../js/admin.js"></script>
+</body>
+</html>
